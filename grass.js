@@ -1,8 +1,9 @@
-class Grass extends LivingCreature {
+var LivingCreature = require("./main.js");
+module.exports  = class Grass extends LivingCreature {
 
   mul() {
       this.multiply++;
-      this.direction = random(this.chooseCell(0));
+      this.direction = this.chooseCell(0)[ Math.floor(Math.random()*this.chooseCell(0) + this.chooseCell(0).le)];
       if (this.multiply >= this.speed && this.direction) {
           var newGrass = new Grass(this.direction[0], this.direction[1], this.index);
           newGrass.parentX = this.x;
@@ -13,4 +14,4 @@ class Grass extends LivingCreature {
       }
   }
 }
-module.exports = Grass;
+
